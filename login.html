@@ -62,7 +62,7 @@
     }
     .alert-heading{
       color: black;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
     }
 
 
@@ -76,19 +76,23 @@
       <hr>
       <img class="img" src='img\login.png'>
       <br></br>
-      <form>
-        <input type="text" id="Nombre" name="Nombre" value="E-mail:" required> 
+      <form action="">
+        <fieldset>
+          <input type="text" id="Nombre" name="Nombre" placeholder="E-mail:" required> 
+        </fieldset>
         <br></br>
-        <input type="text" id="Contraseña" name="Contraseña" value="Contraseña:" required> 
+        <fieldset>
+          <input type="password" id="Contraseña" name="Contraseña" placeholder="Contraseña:" required> 
+        </fieldset>
         <br></br>
         <input type="checkbox" id="" name="" value="1">Recuerdame
         <br></br>
-        <input type="button" onclick=" location.href='index.html' " id="submit" name="submit" value="Entrar"  value="Vamos" name="boton" /> 
+        <input type="button" onclick="sessionStorage.setItem('visitado','1'); location.href='index.html'" id="submit"  name="submit" value="Entrar"/>  
       </form>
     </div>
   </div>
 
-  <script src="js/init.js"></script>
+
   <script src="js/login.js"></script>
 </body>
 </html>
