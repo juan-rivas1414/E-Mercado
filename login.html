@@ -39,20 +39,20 @@
       padding: 15px;
       margin: auto;
     }
-    #Contraseña {
+    #contraseña {
       color: grey;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       border-radius: 40px;
       font-size:larger
     }
-    #Nombre {
+    #nombre {
       color: grey;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       border-radius: 40px;
       font-size:larger 
       
     }
-    #submit {
+    .submitted {
       color: white;
       align-items: center;
       background-color: rgb(9, 231, 9);
@@ -74,27 +74,27 @@
   <div class="container p-5">
       <h2 name="alert-heading" class="alert-heading">¡Bienvenido a E-mercado!</h2>
       <hr>
-      <form action="">
+      <form onsubmit="enviarFormulario(event, session)" id = formulario-login action="">
         <img class="img" src='img\login.png'>
         <br>
         <br>
         <br>
         <fieldset>
-          <input type="text" id="Nombre" name="Nombre" placeholder="E-mail:" required> 
+          <input type="text" id="nombre" name="nombre" placeholder="E-mail:" required> 
         </fieldset>
         <br></br>
         <fieldset>
-          <input type="password" id="Contraseña" name="Contraseña" placeholder="Contraseña:" required> 
+          <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña:" required> 
         </fieldset>
         <br></br>
-        <input type="checkbox" id="" name="" value="1">Recuerdame
+        <input type="checkbox" id="remember" name="" >Recuerdame
         <br></br>
-        <input type="button" onclick="sessionStorage.setItem('visitado','1'); location.href='index.html'" id="submit"  name="submit" value="Entrar"/>  
+        <button type="submit" class= "submitted"> Ingresar</button>
+        <!-- onclick="sessionStorage.setItem('visitado','1'); location.href='index.html'" id="submit"  name="submit" value="Entrar" -->
       </form>
     </div>
   </div>
-
-
+  <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
 </html>

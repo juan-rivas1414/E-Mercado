@@ -35,60 +35,66 @@ var getJSONData = function(url){
     })
     .catch(function(error) {
         result.status = 'error';
-        result.data = error;
+        result.data = error
         hideSpinner();
         return result;
     });
 }
 
+// document.getElementsByClassName('site-header')[0].innerHTML += `<a class="py-2 d-none d-md-inline-block" href= "my-profile.html">`+ sessionStorage.getItem() `</a> ` 
 
-function showCategoriesList(array){
+// function save(){
+//   var checkbox = document.getElementById('remember');
+//   if(document.getElementById('remember').checked) {
+//       localStorage.setItem('remember', true);
+//   }
+// }
 
-  let htmlContentToAppend = "";
-  for(let i = 0; i < array.length; i++){
-      let category = array[i];
-      htmlContentToAppend += `
-      <div class="list-group-item list-group-item-action">
-          <div class="row">
-              <div class="col-3">
-                  <img src="` + category.imgSrc + `" alt="` + category.desc + `" class="img-thumbnail">
-              </div>
-              <div class="col">
-                  <div class="d-flex w-100 justify-content-between">
-                      
-                      <h2 class="mb-1">`+ category.name +`</h2>
-                      <small class="text-muted">` + category.soldCount + ` artículos</small>
-                  </div>
-                  <br>
-                  <h6>` + category.description + `</h6>
-                  <br>
-                  <h3> ` + category.cost + " " + category.currency + `</h3>
+// function load(){
+//   var checked = JSON.parse(localStorage.getItem('remember'));
+//   if (checked == true) {
+//     document.getElementById("checkbox1zaal1").checked = true;
+//   }
+// }
 
-              </div>
-          </div>
-      </div>
-      `
-      document.getElementById("container p-5").innerHTML = htmlContentToAppend;//nombre de ID debe corregirse.
+
+console.log(false);      
+console.log(window.location);
+if(
+  !window.location.href.endsWith('login.html') && 
+  !(sessionStorage.getItem('logueado')==='true')){
+  window.location.href='login.html'
+}
+
+
+function Mostrarlista(orden){
+  getJSONData(PRODUCTS_URL)
+  .then(function(resultObj){
+    if (resultObj.status === "ok")
+    {
+      categoriesArray = resultObj.data;
+      showCategoriesList(categoriesArray,OrderValue);
     }
+  })
 }
 
-var loggeado = sessionStorage.getItem("visitado");
-if (loggeado != 1) {
-  window.location.href="login.html";
-}
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            categoriesArray = resultObj.data;
-            //Muestro las categorías ordenadas
-            showCategoriesList(categoriesArray);
-        }
-    });
-  }); 
+  getJSONData(PRODUCTS_URL).then(function(resultObj){
+    if (resultObj.status === "ok")
+    {
+      categoriesArray = resultObj.data;
+      showCategoriesList(categoriesArray);
+    }
+  });
 });
+
+document.addEventListener("DOMContentLoaded", function(e){
+  if(document.getElementById('remember').checked==true) {
+    document.getElementById('profile').innerHTML = sessionStorage.getItem('nombre')
+  }
+  else{
+    sessionStorage.setItem('nombre',nombreUsuario);
+  }
+});
+
+// document.getElementsByClassName('site-header sticky-top py-1 bg-dark').innerHTML += '<a ref="my-profile.html">' + sessionStorage.getItem('nombre') + '</a>'
