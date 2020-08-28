@@ -21,11 +21,56 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
-  <body>
+  <body >
     <style>
       .container2{
         margin: 55px;
       }
+      body{
+        background-color: black
+      }
+      #sortAsc{
+        color: white;
+        background-color: black;
+      }
+      #sortDesc{
+        color: white;
+        background-color: black;
+      }
+      #sortByCount{
+        color: white;
+        background-color: black;
+      }
+      #rangeFilterCountMin{
+        color: white;
+        background-color: black;
+      }
+      #rangeFilterCountMax{
+        color: white;
+        background-color: black;
+      }
+      #rangeFilterCount{
+        color: white;
+        background-color: black;
+      }
+      #clearRangeFilter{
+        background-color: black;
+        margin-left: 10px;
+      }
+      #frasePegadiza{
+        font-size:xx-large;
+        font-style: initial;
+        color:white
+      }
+      #large{
+        font-size:xx-large;
+        font-style: initial;
+        color:white
+      }
+      #Kant{
+        color: white;
+        font-size: larger;
+      } 
     </style>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -37,11 +82,12 @@
       </div> 
     </nav>
     <main role="main" class="pb-5">
-      <div class="text-center p-4">
-          <h2>Productos</h2>
-          <p class="lead">Los mejores productos y los mejores precios a la puerta de tu casa</p>
+      <div class="text-center p-4" >
+          <h1 id=large>Productos</h1>
+          <br>
+          <p class="lead" id=frasePegadiza>Los mejores productos...los mejores precios...a la puerta de tu casa.</p>
       </div>
-      <div class="container">
+      <div class="container" id= "lightblue">
           <div class="row">
               <div class="col text-right">
                   <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
@@ -62,7 +108,7 @@
               <div class="col-md-6 col-sm-12 mb-1 container">
                 <div class="row container p-0 m-0">
                   <div class="col">
-                    <p class="font-weight-normal text-right my-2">Cant.</p>
+                    <p class="font-weight-normal text-right my-2" id="Kant">Cant.</p>
                   </div>
                   <div class="col">
                     <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
