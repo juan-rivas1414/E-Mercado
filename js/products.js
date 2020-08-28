@@ -25,14 +25,14 @@ function sortCategories(criteria, array){
     if (criteria === ORDER_ASC_POR_NOMBRE)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            if ( a.cost < b.cost ){ return -1; }
+            if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_POR_NOMBRE){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
-            if ( a.name < b.name ){ return 1; }
+            if ( a.cost > b.cost ){ return -1; }
+            if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_CANTIDAD_PRODUCTOS){
@@ -68,7 +68,7 @@ function showCategoriesList(){
                     <div class="d-flex w-100 justify-content-between">
                         
                         <h2 class="mb-1">`+ category.name +`</h2>
-                        <small class="text-muted">` + category.soldCount + ` artículos</small>
+                        <p class="text-muted">` + category.soldCount + ` clientes satisfechos</p>
                     </div>
                     <br>
                     <h6>` + category.description + `</h6>
@@ -85,36 +85,6 @@ function showCategoriesList(){
   
 
 
-  // function showCategoriesList(){
-  
-  //   let htmlContentToAppend = "";
-  //   for(let i = 0; i < currentCategoriesArray.length; i++){
-  //       let category = currentCategoriesArray[i];
-  
-  //       if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-  //           ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
-  
-  //           htmlContentToAppend += `
-  //           <a href="products.html" class="list-group-item list-group-item-action">
-  //               <div class="row">
-  //                   <div class="col-3">
-  //                       <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-  //                   </div>
-  //                   <div class="col">
-  //                       <div class="d-flex w-100 justify-content-between">
-  //                           <h4 class="mb-1">`+ category.name +`</h4>
-  //                           <small class="text-muted">` + category.soldCount + ` artículos</small>
-  //                       </div>
-  //                       <p class="mb-1">` + category.description + `</p>
-  //                   </div>
-  //               </div>
-  //           </a>
-  //           `
-  //       }
-  
-  //       document.getElementById("container p-5").innerHTML = htmlContentToAppend;
-  //   }
-  // }
   
   function sortAndShowCategories(sortCriteria, categoriesArray){
     currentSortCriteria = sortCriteria;
