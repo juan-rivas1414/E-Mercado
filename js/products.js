@@ -15,6 +15,7 @@
 const ORDER_ASC_POR_NOMBRE = "AZ";
 const ORDER_DESC_POR_NOMBRE = "ZA";
 const ORDER_BY_CANTIDAD_PRODUCTOS = "Cant";
+const ORDER_BY_CANTIDAD_PRODUCTOS_menor = "Cant2";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
@@ -44,7 +45,17 @@ function sortCategories(criteria, array){
             if ( aCount < bCount ){ return 1; }
             return 0;
         });
+    }else if (criteria === ORDER_BY_CANTIDAD_PRODUCTOS_menor){
+        result = array.sort(function(a, b) {
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
+
+            if ( aCount < bCount ){ return -1; }
+            if ( aCount > bCount ){ return 1; }
+            return 0;
+        });
     }
+    
 
     return result;
 }
@@ -116,6 +127,10 @@ function showCategoriesList(){
   
     document.getElementById("sortByCount").addEventListener("click", function(){
         sortAndShowCategories(ORDER_BY_CANTIDAD_PRODUCTOS);
+    });
+
+    document.getElementById("sortByCount2").addEventListener("click", function(){
+        sortAndShowCategories(ORDER_BY_CANTIDAD_PRODUCTOS_menor);
     });
   
     document.getElementById("clearRangeFilter").addEventListener("click", function(){

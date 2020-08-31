@@ -21,7 +21,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
-  <body >
+  <body onload="cargar();">
     <style>
       .container2{
         margin: 55px;
@@ -38,6 +38,10 @@
         background-color: black;
       }
       #sortByCount{
+        color: white;
+        background-color: black;
+      }
+      #sortByCount2{
         color: white;
         background-color: black;
       }
@@ -79,6 +83,7 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="userName">Mi perfil</a>
       </div> 
     </nav>
     <main role="main" class="pb-5">
@@ -100,6 +105,9 @@
                       <label class="btn btn-light" id="sortByCount" >
                           <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Artículos más relevantes
                       </label>
+                      <label class="btn btn-light" id="sortByCount2" >
+                        <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Artículos menos relevantes
+                    </label>
                   </div>
               </div>
           </div>
@@ -108,7 +116,7 @@
               <div class="col-md-6 col-sm-12 mb-1 container">
                 <div class="row container p-0 m-0">
                   <div class="col">
-                    <p class="font-weight-normal text-right my-2" id="Kant">Cant.</p>
+                    <p class="font-weight-normal text-right my-2" id="Kant">USD:</p>
                   </div>
                   <div class="col">
                     <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">

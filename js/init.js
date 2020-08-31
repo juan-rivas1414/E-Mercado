@@ -41,21 +41,10 @@ var getJSONData = function(url){
     });
 }
 
-// document.getElementsByClassName('site-header')[0].innerHTML += `<a class="py-2 d-none d-md-inline-block" href= "my-profile.html">`+ sessionStorage.getItem() `</a> ` 
-
-// function save(){
-//   var checkbox = document.getElementById('remember');
-//   if(document.getElementById('remember').checked) {
-//       localStorage.setItem('remember', true);
-//   }
-// }
-
-// function load(){
-//   var checked = JSON.parse(localStorage.getItem('remember'));
-//   if (checked == true) {
-//     document.getElementById("checkbox1zaal1").checked = true;
-//   }
-// }
+function cargar(){
+  var formulario = sessionStorage.getItem('Usuario');
+  document.getElementById("userName").innerHTML = formulario;
+}
 
 
 console.log(false);      
@@ -88,13 +77,5 @@ document.addEventListener("DOMContentLoaded", function(e){
   });
 });
 
-document.addEventListener("DOMContentLoaded", function(e){
-  if(document.getElementById('remember').checked==true) {
-    document.getElementById('profile').innerHTML = sessionStorage.getItem('nombre')
-  }
-  else{
-    sessionStorage.setItem('nombre',nombreUsuario);
-  }
-});
 
-// document.getElementsByClassName('site-header sticky-top py-1 bg-dark').innerHTML += '<a ref="my-profile.html">' + sessionStorage.getItem('nombre') + '</a>'
+
