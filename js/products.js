@@ -60,7 +60,9 @@ function sortCategories(criteria, array){
     return result;
 }
 
-
+function info(){
+    window.location.href="product-info.html"
+}
 
 function showCategoriesList(){
 
@@ -73,13 +75,13 @@ function showCategoriesList(){
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.desc + `" class="img-thumbnail">
+                    <img src ="` + category.imgSrc + `" alt="` + category.desc + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         
                         <h2 class="mb-1">`+ category.name +`</h2>
-                        <p class="text-muted">` + category.soldCount + ` clientes satisfechos</p>
+                        <p class="text-muted"> ` + category.soldCount + ` clientes satisfechos</p>
                     </div>
                     <br>
                     <h6>` + category.description + `</h6>

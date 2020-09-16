@@ -21,9 +21,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="userName">Mi perfil</a>
-      </div>
+        <div class="dropdown">
+          <a class= "py-2 d-none d-md-inline-block" href="#" role="button" id="userName" data-toggle="dropdown">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+            <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+          </div>
+        </div>
     </nav>
     <main role="main" class="pb-5">
         <div class="text-center p-4">
@@ -88,5 +94,16 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/categories.js"></script>
-  </body>
+    <body>  
+      <div class="info">
+        <label for="example">Pon tu comentario
+        </label>
+        <input id="example" type="text"
+               name="Ntext" size="20">
+        <input id="sent" type="submit"  
+               value="Send"> 
+    </div>
+
+  <br>
+  <br>
 </html>

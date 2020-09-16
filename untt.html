@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $('#completado').on('click', function (){
+
+// Código alfa (para evaluar resultado en es.stackoverflow.com)
+this.href=window.location.href+"?id=5&"+this.href.split("?")[1];alert(this.href);
+
+// Código beta (para producción deberá funcionar en tu escenario)
+this.href=window.location.href+"&"+this.href.split("?")[1];
+
+});
+    </script>
+</body>
+</html>
